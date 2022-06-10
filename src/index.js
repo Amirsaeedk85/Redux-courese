@@ -1,18 +1,18 @@
 import configureStore from "./store/configureStore";
-import {
-  bugAdded,
-  bugResolved,
-  bugAssigned,
-  getUnresolvedBugs,
-  getBugsByUserId,
-} from "./store/bugs";
-import { projectAdded } from "./store/projects";
-import { userAdded } from "./store/users";
+// import {
+//   bugAdded,
+//   bugResolved,
+//   bugAssigned,
+//   getUnresolvedBugs,
+//   getBugsByUserId,
+// } from "./store/bugs";
+// import { projectAdded } from "./store/projects";
+// import { userAdded } from "./store/users";
 
 const store = configureStore();
 
 store.dispatch((dispatch, getState) => {
-  dispatch(bugAdded({ id: 1 }));
+  dispatch({ type: "bugsReceived", bugs: [1, 2, 3] });
   console.log(getState());
 });
 
